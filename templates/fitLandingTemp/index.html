@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{BROWSERTITLE001}}</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="{{GOOGLE_FONTS_LINK}}" rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        {{HEADERTITLE001}}
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-toggle-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#course" class="navbar-link" data-nav-link>All Course</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <a href="#" class="btn btn-secondary">Sign Up</a>
+
+      <button class="nav-toggle-btn" aria-label="open manu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" aria-label="hero" id="home" data-section
+        style="background-image: url('./assets/images/hero-banner.jpg')">
+        <div class="container">
+
+          <p class="hero-subtitle">{{HEROSUBHEADER001}}</p>
+
+          <h1 class="h1 hero-title">{{HEROTITLE001}}</h1>
+
+          <p class="hero-text">
+            {{HEROSUBHEADER002}}
+          </p>
+
+          <a href="#" class="btn btn-secondary">Start Course</a>
+
+          <div class="social-wrapper">
+
+            <p class="social-title">Connect with us:</p>
+
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-skype"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="section service" aria-label="service" data-section>
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-1.svg" width="60" height="60" loading="lazy" alt="Women’s Course">
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">{{SERVICE001}}</a>
+                </h3>
+
+                <p class="card-text">
+                  {{SERVICE001DESC001}}
+                </p>
+
+                <a href="#" class="btn btn-secondary">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card active">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-2.svg" width="60" height="60" loading="lazy" alt="Basic Course">
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">{{SERVICE002}}</a>
+                </h3>
+
+                <p class="card-text">
+                  {{SERVICE002DESC001}}
+                </p>
+
+                <a href="#" class="btn btn-secondary">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-3.svg" width="60" height="60" loading="lazy" alt="Men’s Course">
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">{{SERVICE003}}</a>
+                </h3>
+
+                <p class="card-text">
+                  {{SERVICE003DESC001}}
+                </p>
+
+                <a href="#" class="btn btn-secondary">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" aria-label="about" id="about" data-section>
+        <div class="container">
+
+          <div class="about-banner img-holder" style="--width: 470; --height: 580;">
+            <img src="./assets/images/about-banner.jpg" width="470" height="580" loading="lazy" alt="about banner"
+              class="img-cover">
+
+            <a href="#" class="btn btn-secondary">Meet Instructor</a>
+          </div>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">{{INSTRUCTORYEARCOUNT001}} Years Of Experience</p>
+
+            <h2 class="h2 section-title">
+              {{INSTRUCTORSECTIONHEADER001}}
+            </h2>
+
+            <p class="section-text">
+              {{INSTRUCTORABOUT001}}
+            </p>
+
+            <h3 class="about-h3">{{NUMCOURSESOFFERED001}} Courses</h3>
+
+            <p class="section-text">
+              {{INSTRUCTORABOUT002}}
+            </p>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #COURSE
+      -->
+
+      <section class="section course" aria-label="course" id="course" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <p class="section-subtitle">{{NUMCOURSESOFFERED001}} Courses Available</p>
+
+            <h2 class="h2 section-title">{{COURSESECTIONHEADER001}}</h2>
+          </div>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-1.jpg" width="350" height="300" loading="lazy"
+                    alt="Children Nutrition and Cooking" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="{{COURSEPRICE001}}">{{COURSEPRICE001}}</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">{{COURSEAUTHOR001}}</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">{{COURSETITLE001}}</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT8H20M">{{COURSEDURATION001}}</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text"> {{COURSELECTURECOUNT001}}</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-2.jpg" width="350" height="300" loading="lazy"
+                    alt="Introduction to Food and Health." class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="{{COURSEPRICE002}}">{{COURSEPRICE002}}</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">{{COURSEAUTHOR002}}</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">{{COURSETITLE002}}</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT9H25M">{{COURSEDURATION002}}</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text"> {{COURSELECTURECOUNT002}}</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-3.jpg" width="350" height="300" loading="lazy"
+                    alt="Nutrition and Lifestyle in Pregnancy" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="{{COURSEPRICE003}}">{{COURSEPRICE003}}</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">{{COURSEAUTHOR003}}</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">{{COURSETITLE003}}</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT3H38M">{{COURSEDURATION003}}</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text"> {{COURSELECTURECOUNT003}}</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-4.jpg" width="350" height="300" loading="lazy"
+                    alt="Expertise on Fitness, Nutrition and Health" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="{{COURSEPRICE004}}">{{COURSEPRICE004}}</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">{{COURSEAUTHOR004}}</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">{{COURSETITLE004}}</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT2H16M">{{COURSEDURATION004}}</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text"> {{COURSELECTURECOUNT004}}</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-5.jpg" width="350" height="300" loading="lazy"
+                    alt="Hacking exercise for health new science of fitness" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="{{COURSEPRICE005}}">{{COURSEPRICE005}}</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">{{COURSEAUTHOR005}}</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">{{COURSETITLE005}}</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT6H12M">{{COURSEDURATION005}}</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text"> {{COURSELECTURECOUNT005}}</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 300;">
+                  <img src="./assets/images/courses-6.jpg" width="350" height="300" loading="lazy"
+                    alt="Designing Your Personal Weight Loss Plan" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <data class="card-price" value="{{COURSEPRICE006}}">{{COURSEPRICE006}}</data>
+
+                  <p class="card-author">
+                    <a href="#" class="card-link">
+                      By: <span class="span">{{COURSEAUTHOR006}}</span>
+                    </a>
+                  </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">{{COURSETITLE006}}</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time datetime="PT9H34M">{{COURSEDURATION006}}</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <p class="card-meta-text"> {{COURSELECTURECOUNT006}}</p>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" aria-label="blog" id="blog" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <p class="section-subtitle">{{BLOGSUBHEADING001}}</p>
+
+            <h2 class="h2 section-title">{{BLOGTITLE001}}</h2>
+          </div>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="blog-card">
+
+                <div class="wrapper">
+
+                  <time class="publish-date" datetime="2022-02-24">
+                    <span class="span">{{BLOGDATE001}}</span> {{BLOGMONTH001}}
+                  </time>
+
+                  <div>
+
+                    <div class="card-author">
+                      <a href="#" class="card-link">
+                        By: <span class="span">{{BLOGAUTHOR001}}</span>
+                      </a>
+                    </div>
+
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <p class="item-text">{{BLOGLIKECOUNT001}}</p>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <p class="item-text">{{BLOGSHARECOUNT001}}</p>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">{{BLOGTITLE001}}</a>
+                </h3>
+
+                <p class="card-text">
+                  {{BLOGTEXT001}}
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <div class="wrapper">
+
+                  <time class="publish-date" datetime="2022-02-24">
+                    <span class="span">{{BLOGDATE002}}</span> {{BLOGMONTH002}}
+                  </time>
+
+                  <div>
+
+                    <div class="card-author">
+                      <a href="#" class="card-link">
+                        By: <span class="span">{{BLOGAUTHOR002}}</span>
+                      </a>
+                    </div>
+
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <p class="item-text">{{BLOGLIKECOUNT002}}</p>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <p class="item-text">{{BLOGSHARECOUNT002}}</p>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">{{BLOGTITLE002}}</a>
+                </h3>
+
+                <p class="card-text">
+                  {{BLOGTEXT002}}
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <div class="wrapper">
+
+                  <time class="publish-date" datetime="2022-02-24">
+                    <span class="span">{{BLOGDATE003}}</span> {{BLOGMONTH003}}
+                  </time>
+
+                  <div>
+
+                    <div class="card-author">
+                      <a href="#" class="card-link">
+                        By: <span class="span">{{BLOGAUTHOR003}}</span>
+                      </a>
+                    </div>
+
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <p class="item-text">{{BLOGLIKECOUNT003}}</p>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <p class="item-text">{{BLOGSHARECOUNT003}}</p>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">{{BLOGTITLE003}}</a>
+                </h3>
+
+                <p class="card-text">
+                  {{BLOGTEXT003}}
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #APP
+      -->
+
+      <section class="section app" aria-label="app" data-section>
+        <div class="container">
+
+          <div class="app-card">
+
+            <p class="section-subtitle">{{APPSECTIONSUBHEADER001}}</p>
+
+            <h2 class="h2 section-title">
+              {{APPSECTIONTITLE001}}
+            </h2>
+
+            <div class="wrapper">
+              <a href="#" class="app-link" aria-label="play store">
+                <img src="./assets/images/play-store.jpg" width="134" height="38" loading="lazy" alt="Play Store"
+                  class="img">
+              </a>
+
+              <a href="#" class="app-link" aria-label="app store">
+                <img src="./assets/images/app-store.jpg" width="132" height="38" loading="lazy" alt="App Store"
+                  class="img">
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top section" data-section>
+      <div class="container">
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Subscribe Newsletter</p>
+
+          <p class="footer-list-text">
+            {{FOOTERNEWSLETTERTEXT001}}
+          </p>
+
+          <form action="" class="footer-form">
+            <input type="email" name="email_address" aria-label="email" placeholder="Enter email" required
+              class="email-field">
+
+            <button type="submit" class="btn btn-secondary">Subscribe Now</button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">All Courses</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">{{COURSETITLE001}}</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">{{COURSETITLE002}}</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">{{COURSETITLE003}}</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">{{COURSETITLE004}}</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">{{COURSETITLE005}}</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">{{COURSETITLE006}}</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Help Links</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Discussion</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Customer Support</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Course FAQ’s</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Online Classes</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Opening Hours</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">{{OPENINGHOURS001}}</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">{{OPENINGHOURS002}}</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">{{OPENINGHOURS003}}</a>
+          </li>
+
+          <li>
+            <p class="footer-list-title address-title">Location</p>
+          </li>
+
+          <li>
+            <address class="address">
+              {{FOOTERLOCATION001}}
+            </address>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 Futras Made With
+          <ion-icon name="heart" aria-hidden="true"></ion-icon> and too much coffee by
+          <a href="#" class="copyright-link">Sooly</a>
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Terms of Service</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Sitemap</a>
+          </li>
+
+          <li class="footer-bottom-item">
+            <a href="#" class="footer-bottom-link">Security</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
