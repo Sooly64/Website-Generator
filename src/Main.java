@@ -52,7 +52,7 @@ public class Main {
         
         // Process templates with user input
         String html = TemplateManager.parseHTML(TemplateManager.PORTFOLIO, content);
-        String css = TemplateManager.parsePortfolioCSS(colors);
+        String css = TemplateManager.parseCSS(TemplateManager.PORTFOLIO, colors);
         
         // Output the static site
         if (html != null && css != null && FileManager.outputSite("portfolio", html, css, "port")) {
@@ -84,7 +84,7 @@ public class Main {
         
         // Process templates with user input
         String html = TemplateManager.parseHTML(TemplateManager.FITLANDING, contentWithFontScheme);
-        String css = TemplateManager.parseFitLandingCSS(colorScheme, fontScheme);
+        String css = TemplateManager.parseCSS(TemplateManager.FITLANDING, colorScheme, fontScheme);
         
         // Output the static site with assets
         if (html != null && css != null) {

@@ -1,7 +1,112 @@
 import java.util.Scanner;
 
 public class UserInputHandler {
+    
     public static final Scanner scanner = new Scanner(System.in);
+
+    /**
+     * Predefined color schemes for the fitness landing page
+     * Each scheme contains 5 colors: [primary, primary-light, primary-lighter, primary-dark, secondary]
+     */
+    private static final String[][] COLOR_SCHEMES = {
+        // Beach-side (Teal and Beige)
+        {"#69b9d8", "#a2d2e2", "#f1f7f8", "#5093b4", "#f1e7da"},
+        // Navy Blue
+        {"#4b4bc3", "#707ff5", "#a195f9", "#1e1e76", "#8bafd0"},
+        // Royal Purple and Pastel Pink
+        {"hsla(270, 50%, 40%, 0.6)", "hsla(270, 50%, 50%, 0.1)", "hsl(270, 50%, 40%)", "hsl(270, 50%, 30%)", "hsl(281, 69.20%, 84.70%)"},
+        // Burgundy & Peach
+        {"hsla(350, 70%, 35%, 0.6)", "hsla(350, 70%, 45%, 0.1)", "hsl(350, 70%, 35%)", "hsl(350, 70%, 25%)", "#FFDAB9"}
+    };
+
+    /**
+     * Predefined font schemes for the fitness landing page
+     * Each scheme contains 2 fonts: [primary, secondary]
+     */
+    private static final String[][] FONT_SCHEMES = {
+        {"'Montserrat', sans-serif", "'Playfair Display', serif"},
+        {"'Poppins', sans-serif", "'Merriweather', serif"},
+        {"'Open Sans', sans-serif", "'Roboto Slab', serif"},
+        {"'Raleway', sans-serif", "'Lora', serif"}
+    };
+    
+    /* Default values for blank inputs */
+    private static final String[] DEFAULT_FIT_DATA = {
+        
+        /* ===== HEADER ===== */
+
+        "FitLand - Fitness & Health",
+        "FITLAND",
+        
+        /* ===== HERO ===== */
+
+        "WELCOME TO OUR GYM",
+        "Transform Your Body Shape With Proper Workout.",
+        "Achieve your fitness goals with our professional trainers and state-of-the-art equipment.",
+        
+        /* ===== SERVICES ===== */
+
+        "Personal Training",
+        "Customized workout plans tailored to your goals.",
+        "Group Classes",
+        "Fun and energetic group workouts for all fitness levels.",
+        "Nutrition Plans",
+        "Personalized nutrition guidance to complement your training.",
+        
+        /* ===== ABOUT ===== */
+
+        "10+",
+        "MEET OUR CERTIFIED TRAINERS",
+        "Our team of certified trainers is dedicated to helping you achieve your fitness goals.",
+        "With years of experience in the fitness industry, we provide personalized training programs.",
+        
+        /* ===== COURSES ===== */
+
+        "6",
+        "POPULAR FITNESS PROGRAMS",
+        "$99", "John Doe", "Beginner's Workout", "4 Weeks", "12",
+        "$49", "Jane Smith", "Advanced Training", "8 Weeks", "24",
+        "$99", "Mike Johnson", "Weight Loss Program", "12 Weeks", "36",
+        "$29", "Sarah Williams", "Yoga & Flexibility", "6 Weeks", "18",
+        "$79", "David Brown", "Bodybuilding", "10 Weeks", "30",
+        "$89", "Emily Davis", "Cardio Blast", "4 Weeks", "12",
+        
+        /* ===== BLOG ===== */
+
+        "LATEST ARTICLES",
+        "Our Recent News",
+        
+        /* ===== BLOG POST 1 ===== */
+
+        "Beginner's Guide to Fitness",
+        "24", "Feb", "Admin", "15 Likes", "3 Shares",
+        "Discover the best workout routines for beginners to kickstart your fitness journey...",
+        
+        /* ===== BLOG POST 2 ===== */
+
+        "Nutrition for Athletes",
+        "15", "Mar", "Trainer", "28 Likes", "7 Shares",
+        "Nutrition plays a vital role in achieving your fitness goals. Learn how to...",
+        
+        /* ===== BLOG POST 3 ===== */
+
+        "The Importance of Rest Days",
+        "05", "Apr", "Expert", "42 Likes", "12 Shares",
+        "The importance of rest and recovery in your fitness routine cannot be overstated...",
+        
+        /* ===== APP SHOWCASE ===== */
+
+        "DOWNLOAD OUR APP",
+        "Available On Your Favorite Store",
+        
+        /* ===== FOOTER ===== */
+
+        "Subscribe to our newsletter to receive updates on our latest offers and news.",
+        "Monday - Friday: 6:00 AM - 10:00 PM",
+        "Saturday: 8:00 AM - 8:00 PM",
+        "Sunday: 9:00 AM - 5:00 PM",
+        "123 Fitness St, Health District, 10001, New York, USA"
+    };
     
     public static String[] getGradHTMLInput() {
         String[] toInsert = new String[15];
@@ -233,194 +338,195 @@ public class UserInputHandler {
     }
 
     public static String[] getFitHTMLInput() {
-        String[] toInsert = new String[74];
+        String[] toInsert = new String[77];
         
-        System.out.println("Enter the following information (press Enter to use default values in brackets):\n");
+        System.out.println("Enter the following information (press Enter to use default values):\n");
         
-        // Header Section
+        /* ===== HEADER ====== */
+        
         System.out.println("=== Header Section ===");
         System.out.print("Browser Title: ");
-        toInsert[0] = getDefaultIfEmpty(scanner.nextLine(), "FitLand - Fitness & Health");
+        toInsert[0] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[0]);
         
         System.out.print("Header Title: ");
-        toInsert[1] = getDefaultIfEmpty(scanner.nextLine(), "FITLAND");
+        toInsert[1] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[1]);
         
-        // Hero Section
+        /* ===== HERO ====== */
+        
         System.out.println("\n=== Hero Section ===");
         System.out.print("Hero Subheader: ");
-        toInsert[2] = getDefaultIfEmpty(scanner.nextLine(), "WELCOME TO OUR GYM");
+        toInsert[2] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[2]);
         
         System.out.print("Hero Title: ");
-        toInsert[3] = getDefaultIfEmpty(scanner.nextLine(), "Transform Your Body Shape With Proper Workout.");
+        toInsert[3] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[3]);
         
         System.out.print("Hero Description: ");
-        toInsert[4] = getDefaultIfEmpty(scanner.nextLine(), "Achieve your fitness goals with our professional trainers and state-of-the-art equipment.");
+        toInsert[4] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[4]);
         
-        // Services Section
+        /* ===== SERVICES ====== */
+        
         System.out.println("\n=== Services Section ===");
         System.out.println("Service 1:");
         System.out.print("  Title: ");
-        toInsert[5] = getDefaultIfEmpty(scanner.nextLine(), "Personal Training");
+        toInsert[5] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[5]);
         System.out.print("  Description: ");
-        toInsert[6] = getDefaultIfEmpty(scanner.nextLine(), "Customized workout plans tailored to your goals.");
+        toInsert[6] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[6]);
         
         System.out.println("\nService 2:");
         System.out.print("  Title: ");
-        toInsert[7] = getDefaultIfEmpty(scanner.nextLine(), "Group Classes");
+        toInsert[7] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[7]);
         System.out.print("  Description: ");
-        toInsert[8] = getDefaultIfEmpty(scanner.nextLine(), "Fun and energetic group workouts for all fitness levels.");
+        toInsert[8] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[8]);
         
         System.out.println("\nService 3:");
         System.out.print("  Title: ");
-        toInsert[9] = getDefaultIfEmpty(scanner.nextLine(), "Nutrition Plans");
+        toInsert[9] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[9]);
         System.out.print("  Description: ");
-        toInsert[10] = getDefaultIfEmpty(scanner.nextLine(), "Personalized nutrition guidance to complement your training.");
+        toInsert[10] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[10]);
         
-        // About Section
+        /* ===== ABOUT ===== */
+        
         System.out.println("\n=== About Section ===");
         System.out.print("Years of Experience: ");
-        toInsert[11] = getDefaultIfEmpty(scanner.nextLine(), "10+");
+        toInsert[11] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[11]);
         
         System.out.print("Section Header: ");
-        toInsert[12] = getDefaultIfEmpty(scanner.nextLine(), "Meet Our Professional Trainer");
+        toInsert[12] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[12]);
         
         System.out.print("About Paragraph 1: ");
-        toInsert[13] = getDefaultIfEmpty(scanner.nextLine(), "With over a decade of experience in fitness training, our lead trainer brings expertise and passion to every session.");
+        toInsert[13] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[13]);
         
         System.out.print("About Paragraph 2: ");
-        toInsert[14] = getDefaultIfEmpty(scanner.nextLine(), "Specializing in strength training and functional movement, our trainer is committed to helping you achieve your fitness goals.");
+        toInsert[14] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[14]);
         
-        // Courses Section Header
+        /* ===== COURSES ===== */
+        
         System.out.println("\n=== Courses Section ===");
         System.out.print("Number of Courses: ");
-        toInsert[15] = getDefaultIfEmpty(scanner.nextLine(), "6");
+        toInsert[15] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[15]);
         
         System.out.print("Section Header: ");
-        toInsert[16] = getDefaultIfEmpty(scanner.nextLine(), "Our Popular Courses");
+        toInsert[16] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[16]);
         
-        // Course details (6 courses)
+        /* ===== COURSE DATA ===== */
         String[] courseFields = {"Price", "Instructor", "Title", "Duration", "Lecture Count"};
         for (int i = 0; i < 6; i++) {
             System.out.println("\nCourse " + (i+1) + ":");
             for (int j = 0; j < 5; j++) {
                 System.out.print("  " + courseFields[j] + ": ");
-                toInsert[17 + (i*5) + j] = getDefaultIfEmpty(scanner.nextLine(), 
-                    getDefaultCourseValue(i, j, courseFields[j]));
+                if (j == 0) { // Price field
+                    toInsert[17 + (i*5) + j] = getPriceInput(DEFAULT_FIT_DATA[17 + (i*5) + j]);
+                } else {
+                    toInsert[17 + (i*5) + j] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[17 + (i*5) + j]);
+                }
             }
         }
         
-        // Blog Section
+        /* ===== BLOG ===== */
+        
         System.out.println("\n=== Blog Section ===");
         System.out.print("Blog Subheading: ");
-        toInsert[47] = getDefaultIfEmpty(scanner.nextLine(), "Latest Articles");
+        toInsert[47] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[47]);
         
-        System.out.print("Blog Title: ");
-        toInsert[48] = getDefaultIfEmpty(scanner.nextLine(), "Our Recent News");
+        System.out.print("Blog Section Title: ");
+        toInsert[48] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[48]);
         
-        // Blog Posts (3 posts)
-        String[] blogFields = {"Date", "Month", "Author", "Like Count", "Share Count", "Preview Text"};
+        /* ===== BLOG DATA ===== */
+        String[] blogFields = {"Title", "Date", "Month", "Author", "Like Count", "Share Count", "Preview Text"};
+        // For Each Blog Post
         for (int i = 0; i < 3; i++) {
             System.out.println("\nBlog Post " + (i+1) + ":");
-            for (int j = 0; j < 6; j++) {
+            // First get the post title (new field)
+            System.out.print("  " + blogFields[0] + ": ");
+            toInsert[49 + (i*7)] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[49 + (i*7)]);
+            // Then get the rest of the data
+            for (int j = 1; j < blogFields.length; j++) {
                 System.out.print("  " + blogFields[j] + ": ");
-                toInsert[49 + (i*6) + j] = getDefaultIfEmpty(scanner.nextLine(), 
-                    getDefaultBlogValue(i, j, blogFields[j]));
+                toInsert[49 + (i*7) + j] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[49 + (i*7) + j]);
             }
         }
         
-        // App Section
+        /* ===== APP SHOWCASE ===== */
+
         System.out.println("\n=== App Section ===");
         System.out.print("Section Subheader: ");
-        toInsert[67] = getDefaultIfEmpty(scanner.nextLine(), "Download Our App");
+        toInsert[70] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[70]);
         
         System.out.print("Section Title: ");
-        toInsert[68] = getDefaultIfEmpty(scanner.nextLine(), "Available On Your Favorite Store");
+        toInsert[71] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[71]);
         
-        // Footer
+        /* ===== FOOTER ===== */
+        
         System.out.println("\n=== Footer Section ===");
-        System.out.println("Newsletter Text: ");
-        toInsert[69] = getDefaultIfEmpty(scanner.nextLine(), "Subscribe to our newsletter to receive updates on our latest offers and news.");
+        System.out.print("Newsletter Text: ");
+        toInsert[72] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[72]);
         
         System.out.print("Opening Hours Line 1: ");
-        toInsert[70] = getDefaultIfEmpty(scanner.nextLine(), "Monday - Friday: 6:00 AM - 10:00 PM");
+        toInsert[73] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[73]);
         
         System.out.print("Opening Hours Line 2: ");
-        toInsert[71] = getDefaultIfEmpty(scanner.nextLine(), "Saturday: 8:00 AM - 8:00 PM");
+        toInsert[74] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[74]);
         
         System.out.print("Opening Hours Line 3: ");
-        toInsert[72] = getDefaultIfEmpty(scanner.nextLine(), "Sunday: 9:00 AM - 5:00 PM");
+        toInsert[75] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[75]);
         
-        System.out.println("Location: ");
-        toInsert[73] = getDefaultIfEmpty(scanner.nextLine(), "123 Fitness St, Health District, 10001, New York, USA");
+        System.out.print("Location: ");
+        toInsert[76] = getDefaultIfEmpty(scanner.nextLine(), DEFAULT_FIT_DATA[76]);
         
         System.out.println("\n=== Fitness Landing Page Input Complete ===");
         return toInsert;
     }
     
-    private static String getDefaultCourseValue(int courseIndex, int fieldIndex, String fieldName) {
-        String[][] defaultCourses = {
-            {"$30", "John Smith", "Beginner's Full Body Workout", "1h 30m", "12 Lectures"},
-            {"$25", "Sarah Johnson", "Yoga for Flexibility", "1h 15m", "10 Lectures"},
-            {"$35", "Mike Davis", "HIIT Training", "45m", "8 Lectures"},
-            {"$28", "Emily Wilson", "Strength Training 101", "1h 20m", "15 Lectures"},
-            {"$32", "Chris Taylor", "Advanced Cardio", "50m", "9 Lectures"},
-            {"$30", "Jessica Lee", "Pilates Core Workout", "1h 10m", "11 Lectures"}
-        };
-        return defaultCourses[courseIndex][fieldIndex];
-    }
-    
-    private static String getDefaultBlogValue(int postIndex, int fieldIndex, String fieldName) {
-        String[][] defaultPosts = {
-            {"24", "Feb", "Admin", "15 Likes", "3 Shares", "Discover the best workout routines for beginners to kickstart your fitness journey..."},
-            {"15", "Mar", "Trainer", "28 Likes", "7 Shares", "Nutrition plays a vital role in achieving your fitness goals. Learn how to..."},
-            {"05", "Apr", "Expert", "42 Likes", "12 Shares", "The importance of rest and recovery in your fitness routine cannot be overstated..."}
-        };
-        return defaultPosts[postIndex][fieldIndex];
-    }
-    
     private static String getDefaultIfEmpty(String input, String defaultValue) {
-        return input.trim().isEmpty() ? defaultValue : input.trim();
+        return input.trim().isEmpty() ? defaultValue : sanitize(input.trim());
     }
     
-    /**
-     * Predefined color schemes for the fitness landing page
-     * Each scheme contains 5 colors: [primary, primary-light, primary-lighter, primary-dark, secondary]
-     */
-    private static final String[][] COLOR_SCHEMES = {
-        // Teal & Coral
-        {"hsla(180, 100%, 25%, 0.6)", "hsla(180, 100%, 35%, 0.1)", "hsl(180, 100%, 25%)", "hsl(180, 100%, 20%)", "#FF7F50"},
-        // Deep Blue & Gold
-        {"hsla(210, 100%, 30%, 0.6)", "hsla(210, 100%, 40%, 0.1)", "hsl(210, 100%, 30%)", "hsl(210, 100%, 20%)", "#FFD700"},
-        // Royal Purple & Mint
-        {"hsla(270, 50%, 40%, 0.6)", "hsla(270, 50%, 50%, 0.1)", "hsl(270, 50%, 40%)", "hsl(270, 50%, 30%)", "#98FF98"},
-        // Burgundy & Peach
-        {"hsla(350, 70%, 35%, 0.6)", "hsla(350, 70%, 45%, 0.1)", "hsl(350, 70%, 35%)", "hsl(350, 70%, 25%)", "#FFDAB9"}
-    };
-    
-    /**
-     * Predefined font schemes for the fitness landing page
-     * Each scheme contains 2 fonts: [primary, secondary]
-     */
-    public static final String[][] FONT_SCHEMES = {
-        {"'Montserrat', sans-serif", "'Playfair Display', serif"},
-        {"'Poppins', sans-serif", "'Merriweather', serif"},
-        {"'Open Sans', sans-serif", "'Roboto Slab', serif"},
-        {"'Raleway', sans-serif", "'Lora', serif"}
-    };
-    
+    private static String getPriceInput(String defaultValue) {
+        String input;
+        while (true) {
+            input = scanner.nextLine().trim();
+            if (input.isEmpty()) {
+                return defaultValue;
+            }
+            if (input.length() > 3) {
+                System.out.print("  Price must be 3 characters or less. Please try again: ");
+            } else {
+                return sanitize(input);
+            }
+        }
+    }
+
     /**
      * Gets the 1-based index of the selected font scheme
      * @param fontScheme The font scheme to find
      * @return 1-based index of the font scheme, or 1 if not found
      */
+    /**
+     * Gets the 1-based index of the selected font scheme
+     * @param fontScheme The font scheme to find (should be an array of two strings)
+     * @return 1-based index of the font scheme, or 1 if not found or invalid input
+     */
     public static int getFontSchemeIndex(String[] fontScheme) {
-        for (int i = 0; i < FONT_SCHEMES.length; i++) {
-            if (FONT_SCHEMES[i][0].equals(fontScheme[0]) && 
-                FONT_SCHEMES[i][1].equals(fontScheme[1])) {
-                return i + 1; // Return 1-based index
+        try {
+            // Check for null or invalid input
+            if (fontScheme == null || fontScheme.length < 2 || fontScheme[0] == null || fontScheme[1] == null) {
+                System.out.println("Warning: Invalid font scheme provided. Using default font scheme.");
+                return 1; // Default to first scheme
             }
+            
+            // Try to find the font scheme
+            for (int i = 0; i < FONT_SCHEMES.length; i++) {
+                if (FONT_SCHEMES[i][0].equals(fontScheme[0]) && 
+                    FONT_SCHEMES[i][1].equals(fontScheme[1])) {
+                    return i + 1; // Return 1-based index
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error processing font scheme: " + e.getMessage());
         }
-        return 1; // Default to first scheme if not found
+        
+        System.out.println("Warning: Font scheme not found. Using default font scheme.");
+        return 1; // Default to first scheme if not found or error occurred
     }
     
     /**
@@ -429,9 +535,9 @@ public class UserInputHandler {
      */
     public static String[] selectColorScheme() {
         System.out.println("\n=== Select a Color Scheme ===");
-        System.out.println("1. Teal & Coral");
-        System.out.println("2. Deep Blue & Gold");
-        System.out.println("3. Royal Purple & Mint");
+        System.out.println("1. Beach-side (Teal and Beige)");
+        System.out.println("2. Navy Blue");
+        System.out.println("3. Royal Purple & Pastel Pink");
         System.out.println("4. Burgundy & Peach");
         
         int choice = getIntInput("Enter your choice (1-4): ", 1, 4);
@@ -454,7 +560,7 @@ public class UserInputHandler {
     }
     
     /**
-     * Helper method to get a valid integer input within a range
+     * Helper method to get a valid integer input within a range (options)
      */
     private static int getIntInput(String prompt, int min, int max) {
         while (true) {
@@ -469,6 +575,27 @@ public class UserInputHandler {
                 System.out.println("Invalid input. Please enter a number.");
             }
         }
+    }
+
+    /**
+     * Sanitizes the input string by replacing special characters with their HTML entities
+     * @param input The input string to sanitize
+     * @return The sanitized string with HTML special characters escaped
+     */
+    public static String sanitize(String input) {
+        if (input == null) return "";
+        return input
+            .replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+            .replace("\"", "&quot;")
+            .replace("'", "&#39;")
+            .replace("(", "&#40;")
+            .replace(")", "&#41;")
+            .replace("{", "&#123;")
+            .replace("}", "&#125;")
+            .replace("[", "&#91;")
+            .replace("]", "&#93;");
     }
     
     public static void closeScanner() {

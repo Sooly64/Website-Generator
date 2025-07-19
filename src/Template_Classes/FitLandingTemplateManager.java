@@ -1,14 +1,14 @@
 package Template_Classes;
-
 import java.nio.file.*;
 import java.io.IOException;
 
 public class FitLandingTemplateManager {
+
+    /* Pathing for specific HTML and CSS files in template folder for parsing */
     private static final String HTML_TEMPLATE_PATH = System.getProperty("user.dir") + 
             java.io.File.separator + "templates" + 
             java.io.File.separator + "fitLandingTemp" + 
-            java.io.File.separator + "index.html";
-            
+            java.io.File.separator + "index.html";      
     private static final String CSS_TEMPLATE_PATH = System.getProperty("user.dir") + 
             java.io.File.separator + "templates" + 
             java.io.File.separator + "fitLandingTemp" + 
@@ -16,33 +16,39 @@ public class FitLandingTemplateManager {
             java.io.File.separator + "css" + 
             java.io.File.separator + "style.css";
 
-    // Google Fonts URLs for each font scheme
+    /* Google Font URLs for each font scheme (customized) */
     private static final String[] GOOGLE_FONTS_LINKS = {
-        // Montserrat & Playfair Display
+        // Montserrat & Playfair Display (Index: 0)
         "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap",
-        // Poppins & Merriweather
+        // Poppins & Merriweather (Index: 1)
         "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap",
-        // Open Sans & Roboto Slab
+        // Open Sans & Roboto Slab (Index: 2)
         "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600&display=swap",
-        // Raleway & Lora
+        // Raleway & Lora (Index: 3)
         "https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap"
     };
     
     public static String parseHTML(String[] data) {
-        if (data == null || data.length < 75) {  // 74 placeholders + 1 for font scheme
+        if (data == null || data.length < 78) {  // 77 placeholders + 1 for font scheme
             System.out.println("Error: Invalid input array");
             return null;
         }
         
-        // Get font scheme index (default to 0 if not provided)
+        // Get font scheme index (default to 0 (Montserrat & Playfair Display) if not provided)
         int fontSchemeIndex = 0;
-        if (data.length > 74) {
+        if (data.length > 0) {
             try {
-                fontSchemeIndex = Integer.parseInt(data[74].trim()) - 1;
+                // The font scheme index is the last element in the array
+                String fontIndexStr = data[data.length - 1].trim();
+                fontSchemeIndex = Integer.parseInt(fontIndexStr) - 1; // convert from 1-based to 0-based index
+                
+                // Ensure the index is within valid range
                 if (fontSchemeIndex < 0 || fontSchemeIndex >= GOOGLE_FONTS_LINKS.length) {
+                    System.out.println("Warning: Font scheme index " + (fontSchemeIndex + 1) + " is out of range. Using default font scheme.");
                     fontSchemeIndex = 0;
                 }
             } catch (NumberFormatException e) {
+                System.out.println("Warning: Invalid font scheme index. Using default font scheme.");
                 fontSchemeIndex = 0;
             }
         }
@@ -54,7 +60,7 @@ public class FitLandingTemplateManager {
         }
         
         try {
-            // Set the Google Fonts link first
+            // Set the Google Fonts link first using its calculated Index
             String googleFontsLink = GOOGLE_FONTS_LINKS[fontSchemeIndex];
             html = html.replace("{{GOOGLE_FONTS_LINK}}", googleFontsLink);
             
@@ -129,47 +135,45 @@ public class FitLandingTemplateManager {
             
             // Blog Section
             html = html.replace("{{BLOGSUBHEADING001}}", data[47]);
-            html = html.replace("{{BLOGTITLE001}}", data[48]);
+            html = html.replace("{{BLOGSECTIONTITLE001}}", data[48]);
             
             // Blog Post 1
-            html = html.replace("{{BLOGDATE001}}", data[49]);
-            html = html.replace("{{BLOGMONTH001}}", data[50]);
-            html = html.replace("{{BLOGAUTHOR001}}", data[51]);
-            html = html.replace("{{BLOGLIKECOUNT001}}", data[52]);
-            html = html.replace("{{BLOGSHARECOUNT001}}", data[53]);
-            html = html.replace("{{BLOGTEXT001}}", data[54]);
+            html = html.replace("{{BLOGTITLE001}}", data[49]); // Blog post 1 title
+            html = html.replace("{{BLOGDATE001}}", data[50]);
+            html = html.replace("{{BLOGMONTH001}}", data[51]);
+            html = html.replace("{{BLOGAUTHOR001}}", data[52]);
+            html = html.replace("{{BLOGLIKECOUNT001}}", data[53]);
+            html = html.replace("{{BLOGSHARECOUNT001}}", data[54]);
+            html = html.replace("{{BLOGTEXT001}}", data[55]);
             
             // Blog Post 2
-            html = html.replace("{{BLOGDATE002}}", data[55]);
-            html = html.replace("{{BLOGMONTH002}}", data[56]);
-            html = html.replace("{{BLOGAUTHOR002}}", data[57]);
-            html = html.replace("{{BLOGLIKECOUNT002}}", data[58]);
-            html = html.replace("{{BLOGSHARECOUNT002}}", data[59]);
-            html = html.replace("{{BLOGTEXT002}}", data[60]);
+            html = html.replace("{{BLOGTITLE002}}", data[56]); // Blog post 2 title
+            html = html.replace("{{BLOGDATE002}}", data[57]);
+            html = html.replace("{{BLOGMONTH002}}", data[58]);
+            html = html.replace("{{BLOGAUTHOR002}}", data[59]);
+            html = html.replace("{{BLOGLIKECOUNT002}}", data[60]);
+            html = html.replace("{{BLOGSHARECOUNT002}}", data[61]);
+            html = html.replace("{{BLOGTEXT002}}", data[62]);
             
             // Blog Post 3
-            html = html.replace("{{BLOGDATE003}}", data[61]);
-            html = html.replace("{{BLOGMONTH003}}", data[62]);
-            html = html.replace("{{BLOGAUTHOR003}}", data[63]);
-            html = html.replace("{{BLOGLIKECOUNT003}}", data[64]);
-            html = html.replace("{{BLOGSHARECOUNT003}}", data[65]);
-            html = html.replace("{{BLOGTEXT003}}", data[66]);
-            
-            // Make sure all blog title placeholders are replaced
-            html = html.replace("{{BLOGTITLE001}}", data[48]); // Blog title for all posts
-            html = html.replace("{{BLOGTITLE002}}", data[48]); // Blog title for all posts
-            html = html.replace("{{BLOGTITLE003}}", data[48]); // Blog title for all posts
+            html = html.replace("{{BLOGTITLE003}}", data[63]); // Blog post 3 title
+            html = html.replace("{{BLOGDATE003}}", data[64]);
+            html = html.replace("{{BLOGMONTH003}}", data[65]);
+            html = html.replace("{{BLOGAUTHOR003}}", data[66]);
+            html = html.replace("{{BLOGLIKECOUNT003}}", data[67]);
+            html = html.replace("{{BLOGSHARECOUNT003}}", data[68]);
+            html = html.replace("{{BLOGTEXT003}}", data[69]);
             
             // App Section
-            html = html.replace("{{APPSECTIONSUBHEADER001}}", data[67]);
-            html = html.replace("{{APPSECTIONTITLE001}}", data[68]);
+            html = html.replace("{{APPSECTIONSUBHEADER001}}", data[70]);
+            html = html.replace("{{APPSECTIONTITLE001}}", data[71]);
             
             // Footer
-            html = html.replace("{{FOOTERNEWSLETTERTEXT001}}", data[69]);
-            html = html.replace("{{OPENINGHOURS001}}", data[70]);
-            html = html.replace("{{OPENINGHOURS002}}", data[71]);
-            html = html.replace("{{OPENINGHOURS003}}", data[72]);
-            html = html.replace("{{FOOTERLOCATION001}}", data[73]);
+            html = html.replace("{{FOOTERNEWSLETTERTEXT001}}", data[72]);
+            html = html.replace("{{OPENINGHOURS001}}", data[73]);
+            html = html.replace("{{OPENINGHOURS002}}", data[74]);
+            html = html.replace("{{OPENINGHOURS003}}", data[75]);
+            html = html.replace("{{FOOTERLOCATION001}}", data[76]);
             
             return html;
             
@@ -181,8 +185,9 @@ public class FitLandingTemplateManager {
     }
     
     public static String parseCSS(String[] colors, String[] fonts) {
-        System.out.println("Starting CSS parsing...");
         
+        /* Precondition Check */
+
         if (colors == null || colors.length < 5 || fonts == null || fonts.length < 2) {
             System.out.println("Error: Invalid input arrays");
             System.out.println("Colors: " + (colors == null ? "null" : colors.length));
@@ -190,37 +195,24 @@ public class FitLandingTemplateManager {
             return null;
         }
         
-        System.out.println("Reading CSS template from: " + CSS_TEMPLATE_PATH);
-        String css = readTemplate(CSS_TEMPLATE_PATH);
-        
+        /* Get Target CSS */
+
+        String css = readTemplate(CSS_TEMPLATE_PATH);        
         if (css == null) {
             System.out.println("Error: Could not load CSS template");
             return null;
         }
         
+        /* Parsing and Editing */
+
         try {
-            System.out.println("Replacing color and font placeholders...");
-            System.out.println("Primary Color 1: " + colors[0]);
-            System.out.println("Primary Color 2: " + colors[1]);
-            System.out.println("Primary Color 3: " + colors[2]);
-            System.out.println("Primary Color 4: " + colors[3]);
-            System.out.println("Secondary Color: " + colors[4]);
-            System.out.println("Primary Font: " + fonts[0]);
-            System.out.println("Secondary Font: " + fonts[1]);
-            
-            // Replace all occurrences of each placeholder
-            css = css.replace("{{PRIMARYCOLOR001}}", colors[0]);
-            css = css.replace("{{PRIMARYCOLOR002}}", colors[1]);
-            css = css.replace("{{PRIMARYCOLOR003}}", colors[2]);
-            css = css.replace("{{PRIMARYCOLOR004}}", colors[3]);
-            css = css.replace("{{SECONDARYCOLOR001}}", colors[4]);
-            css = css.replace("{{FONTFAMILY001}}", fonts[0]);
-            css = css.replace("{{FONTFAMILY002}}", fonts[1]);
-            
-            // Debug: Check if replacements were made
-            if (css.contains("{{PRIMARYCOLOR001}}")) {
-                System.out.println("Warning: Some placeholders were not replaced!");
-            }
+            css = css.replace("{{PRIMARYCOLOR001}}", colors[0])
+            .replace("{{PRIMARYCOLOR002}}", colors[1])
+            .replace("{{PRIMARYCOLOR003}}", colors[2])
+            .replace("{{PRIMARYCOLOR004}}", colors[3])
+            .replace("{{SECONDARYCOLOR001}}", colors[4])
+            .replace("{{FONTFAMILY001}}", fonts[0])
+            .replace("{{FONTFAMILY002}}", fonts[1]);
             
             return css;
         } catch (Exception e) {
@@ -230,6 +222,8 @@ public class FitLandingTemplateManager {
         }
     }
     
+    /* Helper Functions */
+
     private static String readTemplate(String path) {
         try {
             return Files.readString(Paths.get(path));
